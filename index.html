@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wendy, la luz de mis ojos... mi universo entero ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', serif;
+            color: white;
+            text-align: center;
+            background:
+                radial-gradient(ellipse at top, #581447, transparent 60%),
+                linear-gradient(135deg, #08030e, #21091f, #090410);
+            overflow-x: hidden;
+        }
+
+        /* ESTRELLAS DEL UNIVERSO */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, white, transparent),
+                radial-gradient(2px 2px at 100px 100px, pink, transparent),
+                radial-gradient(1px 1px at 180px 60px, white, transparent),
+                radial-gradient(2px 2px at 250px 150px, #ff5ca8, transparent);
+            background-size: 300px 200px;
+            animation: estrellas 4s infinite alternate;
+        }
+
+        @keyframes estrellas {
+            from {
+                opacity: .3;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* MENÚ */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 15px 8px;
+            background: rgba(10, 3, 15, .9);
+            border-bottom: 1px solid #ff80b5;
+        }
+
+        nav a {
+            color: #ffb5d2;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: white;
+            text-shadow: 0 0 10px #ff80b5;
+        }
+
+        /* PORTADA */
+        .portada {
+            min-height: 100vh;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #ffb6d5;
+            font-size: clamp(35px, 7vw, 65px);
+            font-style: italic;
+            text-shadow: 0 0 20px #ff238b;
+            animation: brillar 3s infinite alternate;
+        }
+
+        @keyframes brillar {
+            from {
+                text-shadow: 0 0 10px #ff238b;
+            }
+
+            to {
+                text-shadow: 0 0 35px #ff80b5;
+            }
+        }
+
+        .subtitulo {
+            max-width: 600px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* CORAZÓN CENTRAL */
+        .contenedor-corazon {
+            width: 200px;
+            height: 200px;
+            margin: 90px 0 70px;
+            position: relative;
+        }
+
+        .corazon {
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: linear-gradient(135deg, #ffb4d0, #ff176c, #a00042);
+            transform: rotate(-45deg);
+            animation: latido 1.4s infinite;
+            box-shadow: 0 0 35px #ff287f, 0 0 80px #ff287f;
+        }
+
+        .corazon::before,
+        .corazon::after {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: inherit;
+            border-radius: 50%;
+        }
+
+        .corazon::before {
+            top: -70px;
+            left: 0;
+        }
+
+        .corazon::after {
+            top: 0;
+            left: 70px;
+        }
+
+        @keyframes latido {
+            0%, 100% {
+                transform: rotate(-45deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(-45deg) scale(1.13);
+            }
+        }
+
+        /* ÓRBITAS DEL CORAZÓN */
+        .orbita {
+            position: absolute;
+            top: 45px;
+            left: -30px;
+            width: 260px;
+            height: 100px;
+            border: 2px solid #ffb0d2;
+            border-radius: 50%;
+            transform: rotate(-25deg);
+            box-shadow: 0 0 15px #ff4c9c;
+            z-index: 2;
+        }
+
+        .orbita2 {
+            position: absolute;
+            top: 40px;
+            left: -40px;
+            width: 280px;
+            height: 120px;
+            border: 1px solid #b879ff;
+            border-radius: 50%;
+            transform: rotate(30deg);
+        }
+
+        /* FRASES ROMÁNTICAS */
+        .frases {
+            max-width: 900px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px auto;
+        }
+
+        .frase {
+            padding: 12px 18px;
+            color: #ffc4dc;
+            border: 1px solid #ff6fa9;
+            border-radius: 30px;
+            background: rgba(100, 0, 50, .3);
+            box-shadow: 0 0 12px #ff238b33;
+            transition: .3s;
+        }
+
+        .frase:hover {
+            background: #9e1457;
+            transform: scale(1.08);
+        }
+
+        /* SECCIONES */
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            color: #ffb4d0;
+            font-size: 35px;
+            font-style: italic;
+        }
+
+        .tarjeta {
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 650px;
+            background: rgba(70, 15, 55, .5);
+            border: 1px solid #ff80b5;
+            border-radius: 20px;
+            box-shadow: 0 0 25px #ff238b22;
+            line-height: 1.9;
+        }
+
+        button {
+            padding: 14px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            color: #58002b;
+            background: linear-gradient(135deg, #ffc1d9, #ff5a9f);
+            font-size: 16px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            transform: scale(1.06);
+            box-shadow: 0 0 20px #ff80b5;
+        }
+
+        #mensajeCarta {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            background: rgba(255, 150, 200, .1);
+            border-radius: 15px;
+        }
+
+        /* CANCIÓN */
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        /* CORAZONES FLOTANTES */
+        .flota {
+            position: fixed;
+            bottom: -50px;
+            z-index: 5;
+            pointer-events: none;
+            animation: subir 8s linear forwards;
+        }
+
+        @keyframes subir {
+            to {
+                transform: translateY(-110vh) rotate(30deg);
+                opacity: 0;
+            }
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            padding: 30px 15px;
+            color: #ffb6d5;
+        }
+
+        /* DISEÑO PARA TELÉFONOS */
+        @media (max-width: 500px) {
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .portada {
+                padding: 45px 15px;
+            }
+
+            .subtitulo {
+                font-size: 17px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .tarjeta {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENÚ PRINCIPAL -->
+    <nav>
+        <a href="#inicio">❤️ Inicio</a>
+        <a href="#promesas">💗 Mis palabras</a>
+        <a href="#carta">💌 Mi carta</a>
+        <a href="#cancion">🎵 Nuestra canción</a>
+    </nav>
+
+    <!-- PORTADA PRINCIPAL -->
+    <header class="portada" id="inicio">
+
+        <p>✨ UN UNIVERSO CREADO PARA TI, WENDY ✨</p>
+
+        <h1>
+            Wendy, la luz de mis ojos...<br>
+            mi universo entero ❤️
+        </h1>
+
+        <p class="subtitulo">
+            Si pudiera regalarte algo en esta vida,
+            te regalaría la capacidad de verte
+            a través de mis ojos,
+            para que entendieras lo maravillosa
+            que eres para mí. ❤️
+
+            <br><br>
+
+            PD: Llevo ya un par de semanas codificando esto...
+            y ha sido una de las razones de mis desvelos.
+        </p>
+
+        <div class="contenedor-corazon">
+            <div class="corazon"></div>
+            <div class="orbita"></div>
+            <div class="orbita2"></div>
+        </div>
+
+        <p>🌹 Wendy, eres mi estrella favorita en este universo 🌹</p>
+
+        <div class="frases">
+            <span class="frase">❤️ Te amo muchísimo, Wendy</span>
+            <span class="frase">👑 Mi princesa</span>
+            <span class="frase">💗 Mi adoración</span>
+            <span class="frase">🌹 Mi diosa</span>
+            <span class="frase">🌌 Mi universo</span>
+            <span class="frase">🌎 Mi mundo</span>
+            <span class="frase">🧸 Mi consentida</span>
+            <span class="frase">✨ Mi estrella favorita</span>
+            <span class="frase">💞 Mi felicidad</span>
+            <span class="frase">♾️ Mi hoy y mi siempre</span>
+            <span class="frase">😘 Mi niña hermosa</span>
+            <span class="frase">💖 Mi lugar favorito</span>
+        </div>
+
+    </header>
+
+    <!-- PALABRAS DE AMOR -->
+    <section id="promesas">
+
+        <h2>🌹 Mil razones para amarte 🌹</h2>
+
+        <div class="tarjeta">
+
+            <h3>💖 Wendy, mi princesa hermosa</h3>
+
+            <p>
+                Tu sonrisa ilumina mis días,
+                tu voz alegra mi corazón
+                y tu existencia hace que mi mundo
+                sea un lugar mucho más bonito.
+            </p>
+
+            <p>
+                Entre millones de personas,
+                mi corazón tuvo la suerte
+                de encontrarte a ti. ❤️
+            </p>
+
+        </div>
+
+        <div class="tarjeta">
+
+            <h3>🌌 Wendy, mi universo entero</h3>
+
+            <p>
+                Si las estrellas pudieran hablar,
+                todas contarían cuánto te amo.
+            </p>
+
+            <p>
+                Si las flores pudieran escribir,
+                llenarían el universo con tu nombre.
+            </p>
+
+            <p>
+                Y si mi corazón pudiera pedir un deseo,
+                pediría seguir compartiendo
+                muchos momentos contigo. 💗
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CARTA SORPRESA -->
+    <section id="carta">
+
+        <h2>💌 Una cartita para ti</h2>
+
+        <div class="tarjeta">
+
+            <p>
+                Wendy, hay algo que quiero que recuerdes siempre...
+            </p>
+
+            <button
+                type="button"
+                onclick="abrirCarta()"
+                aria-controls="mensajeCarta"
+                aria-expanded="false">
+
+                Pulsa aquí, mi amor ❤️
+
+            </button>
+
+            <div id="mensajeCarta">
+
+                <h3>Wendy, mi niña preciosa 💖</h3>
+
+                <p>
+                    Quiero que sepas que eres una de las
+                    cosas más bonitas que me han pasado.
+                    Tú eres quien me da fuerzas, incluso
+                    en medio de la tormenta más intensa.
+                </p>
+
+                <p>
+                    Gracias por tu sonrisa, por tu cariño
+                    y por cada momento que compartimos.
+
+                    No necesito un mundo perfecto:
+                    me basta con poder compartir mi mundo contigo.
+
+                    Porque, en realidad, mi mundo eres tú,
+                    con todas las virtudes que te hacen única.
+                </p>
+
+                <p>
+                    Eres mi princesa, mi adoración,
+                    mi diosa, mi universo, mi mundo
+                    y mi consentida, Wendy.
+                </p>
+
+                <p>
+                    Te amo muchísimo, más de lo que
+                    estas palabras pueden explicar.
+                </p>
+
+                <p>
+                    Cada día y cada noche pienso y repienso:
+                    ¿qué he hecho para merecer algo tan bonito?
+
+                    Es realmente un privilegio sentir esto
+                    y tener a alguien capaz de hacer latir
+                    mi corazón con tanta fuerza,
+                    hasta dejarme sin aliento.
+
+                    Hoy, mañana y siempre...
+                    quiero que recuerdes que tienes
+                    un lugar muy especial en mi corazón. ❤️
+                </p>
+
+                <h3>
+                    Con todo mi amor, que calienta mi corazón
+                    con fervor y hace que esta llama arda
+                    sin temor, como un león feroz. ❤️
+                </h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CANCIÓN -->
+    <section id="cancion">
+
+        <h2>🎵 Nuestra canción</h2>
+
+        <div class="tarjeta">
+
+            <h3>❤️ Es por ti — Juanes</h3>
+
+            <iframe
+                loading="lazy"
+                width="100%"
+                height="250"
+                src="https://www.youtube-nocookie.com/embed/-9l5t3MWss8"
+                title="Es por ti, de Juanes"
+                style="max-width:450px; border:2px solid #ff80b5;
+                       border-radius:15px;"
+                allow="accelerometer; autoplay; clipboard-write;
+                       encrypted-media; gyroscope; picture-in-picture;
+                       web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+
+            <p>
+                🎶 Wendy, cada nota me recuerda a ti. 🌹
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- DESPEDIDA -->
+    <footer>
+
+        <h2>♾️ Mi hoy, mi mañana y mi siempre ♾️</h2>
+
+        <p>
+            Gracias por existir, Wendy, mi princesa. 🌹
+        </p>
+
+        <p>
+            Te amo muchísimo, mi universo entero. ❤️
+        </p>
+
+        <p>
+            Hecho con todo mi amor, para ti, Wendy.
+
+            Créeme: no hay poesía que pueda expresar
+            ni comparar todo esto que siento,
+            ni libro que alcance a abarcar todo lo que pienso.
+
+            Solo sé que, sin importar qué, tú eres esa frase
+            que nunca sale de mi mente; esa frase que, je,
+            es más pegajosa que la miel: tan dulce,
+            tan increíble. 💗
+        </p>
+
+    </footer>
+
+    <script>
+
+        // ABRIR O CERRAR LA CARTA
+        function abrirCarta() {
+
+            const carta = document.getElementById("mensajeCarta");
+
+            const boton = document.querySelector(
+                '[aria-controls="mensajeCarta"]'
+            );
+
+            if (carta.style.display === "block") {
+
+                carta.style.display = "none";
+                boton.setAttribute("aria-expanded", "false");
+
+            } else {
+
+                carta.style.display = "block";
+                boton.setAttribute("aria-expanded", "true");
+
+            }
+
+        }
+
+        // CORAZONES, ROSAS Y ESTRELLAS FLOTANTES
+        const decoraciones = [
+            "❤️", "💗", "💕", "💖",
+            "🌹", "🌸", "✨", "⭐"
+        ];
+
+        function crearDecoracion() {
+
+            const elemento = document.createElement("div");
+
+            elemento.className = "flota";
+
+            elemento.textContent =
+                decoraciones[
+                    Math.floor(Math.random() * decoraciones.length)
+                ];
+
+            elemento.style.left = Math.random() * 100 + "vw";
+
+            elemento.style.fontSize =
+                (15 + Math.random() * 25) + "px";
+
+            const duracion = 6 + Math.random() * 5;
+
+            elemento.style.animationDuration = duracion + "s";
+
+            document.body.appendChild(elemento);
+
+            setTimeout(() => {
+                elemento.remove();
+            }, duracion * 1000);
+
+        }
+
+        setInterval(crearDecoracion, 500);
+
+    </script>
+
+</body>
+
+</html>
